@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>京东页面</title>
+	<link href="jingdongPage.css" rel="stylesheet" >
+	<script type="text/javascript" src="vue.min.js"></script>
+	<script type="text/javascript" src="jingdongPage.js"></script>
+</head>
+<body>
+<div class="all">
+
+
+<div class="top">
+	<div class="head">
+	        
+	        
+	        
+        <ul>
+            <li class="head6"><a href="#">企业采购</a></li>
+            <li class="head5"><a href="#">京东会员</a></li>
+             <li class="head4" @mouseover="showUl()" @mouseout="hideUl()"><a href="#" >我的京东&nbsp;<img src="img/arrow.png"></a>
+                <ul v-show="ulShow" >
+                    <li><a href="#">消息</a></li>
+                    <li><a href="#">我的关注</a></li>
+                    <li><a href="#">待处理订单</a></li>
+                    <li><a href="#">我的问答</a></li>
+                </ul>
+            </li>
+            
+            <li class="head3"><a href="#">我的订单</a></li>
+             <li class="head2"><a href="#">免费注册</a></li>
+            <li class="head1">你好，请登录</li>
+                        
+        </ul>
+	</div><!-- head结束 -->
+
+    <div class="search">
+         <input type="text" class="search-text" :placeholder="searchText" @click="stopPla()">
+         <input type="submit" class="search-submit" value="">
+         <p><a href="#">领卷198减100</a>&nbsp;&nbsp;&nbsp;<a href="#">9.9元100张</a>&nbsp;&nbsp;&nbsp;<a href="#">五折特惠</a>&nbsp;&nbsp;&nbsp;<a href="#">买3免1</a></p>
+    </div><!-- search结束 -->
+    <div class="shopping-car" @mouseover="showCar()" @mouseout="hideCar()">
+      <img src="img/shoppingCar.jpg">
+    </div><!-- shopping-car结束 -->
+
+    <div class="shopping-car2" v-show="carShow" >
+         <img src="img/shoppingCar2.jpg">
+         <p>购物车中还没用商品，赶紧选购吧</p>
+    </div><!-- shopping-car2结束 -->
+    <img class="logo" src="img/logo.jpg">
+    <div class="title">
+        <ul>
+           <li><a href="#">秒杀</a></li>
+           <li><a href="#">优惠劵</a></li>
+           <li><a href="#">闪购</a></li>
+           <li><a href="#">拍卖</a></li>
+           <li><a href="#">服装城</a></li>
+           <li><a href="#">京东超市</a></li>
+           <li><a href="#">生鲜</a></li>
+           <li><a href="#">全球购</a></li>
+           <li><a href="#">京东金融</a></li>
+        </ul>
+        
+    </div><!-- title结束 -->
+</div><!-- top结束 -->
+
+
+ <div class="main">   
+    <div class="nav">
+       <ul>
+            <li class="n1"><a href="#" @mouseover="showChild()" @mouseout="hideChild()">家用电器</a>
+                 <div class="nav-child" v-show="navChild">
+        <div class="nav-child-title">
+            <ul>
+            <li><a href="#">电视 ></a></li>
+            <li><a href="#">空调 ></a></li>
+            </ul>
+        </div> <!-- nav-child-title 结束   -->
+        <div class="title-child" >
+               <ul class="TV">
+                    <li><a href="#">曲面电视</a></li>
+                    <li><a href="#">超薄电视</a></li>
+                    <li><a href="#">HDR电视</a></li>
+                    <li><a href="#">OLED电视</a></li>
+                    <li><a href="#">4K超清电视</a></li>
+               </ul>
+
+               <ul class="air">
+                    <li><a href="#">曲面电视</a></li>
+                    <li><a href="#">超薄电视</a></li>
+                    <li><a href="#">HDR电视</a></li>
+                    <li><a href="#">OLED电视</a></li>
+                    <li><a href="#">4K超清电视</a></li>
+               </ul>
+
+         </div><!-- title-child结束  -->  
+        <img src="img/nav1.jpg" class="nav1"> 
+        
+    </div><!-- nav-child结束 -->
+            </li><!-- 家用电器结束 -->
+            <li class="n2"><a href="#">手机</a> / <a href="#">运营商</a> / <a href="#">数码</a></li>
+            <li class="n3"><a href="#">电脑</a> / <a href="#">办公</a></li>
+            <li class="n4"><a href="#">家居</a> / <a href="#">家具</a> / <a href="#">家装</a> / <a href="#">厨具</a></li>
+            <li class="n5"><a href="#">男装</a> / <a href="#">女装</a> / <a href="#">童装</a> / <a href="#">内衣</a></li>
+            <li class="n6"><a href="#">美妆个护</a> / <a href="#">宠物</a> / </li>
+            <li class="n7"><a href="#">女鞋</a> / <a href="#">箱包</a> / <a href="#">钟表</a> / <a href="#">珠宝</a></li>
+            <li class="n8"><a href="#">男鞋</a> / <a href="#">运动</a> / <a href="#">户外</a></li>
+            <li class="n9"><a href="#">汽车</a> / <a href="#">汽车用品</a></li>
+            <li class="n10"><a href="#">母婴</a> / <a href="#">玩具乐器</a></li>
+            <li class="n11"><a href="#">食品</a> / <a href="#">酒类</a> / <a href="#">生鲜</a> / <a href="#">特产</a></li>
+            <li class="n12"><a href="#">礼品鲜花</a> / <a href="#">农资绿植</a></li>
+            <li class="n13"><a href="#">医药保健</a> / <a href="#">计生情趣</a></li>
+            <li class="n14"><a href="#">图书</a> / <a href="#">音像</a> / <a href="#">电子书</a></li>
+            <li class="n15"><a href="#">机票</a> / <a href="#">酒店</a> / <a href="#">旅游</a> / <a href="#">生活</a></li>
+            <li class="n16"><a href="#">理财</a> / <a href="#">众筹</a> / <a href="#">白条</a> / <a href="#">保险</a></li>
+       </ul>
+    </div><!-- nav结束 -->
+    <div class="middle">
+    <div class="carousel"  @mouseover="stop()" @mouseout="play()" >
+       <ul>
+         <li v-for="(image,index) of img" :key='index' v-show='index===mark'>
+            <img :src="image">
+         </li>
+       </ul>
+       <div class="bullet">
+            <span v-for="(item,index) in img.length"  :class="{'active':index===mark}" @mouseover='change(index)'></span>
+       </div><!-- bullet结束 -->
+       <div v-show="navArrow" >
+       <a href="#" id="prev" class="arrow" @click="pre()">&lt;</a>
+    <a href="#" id="next" class="arrow" @click="next()">&gt;</a>
+    </div><!-- arrow结束 -->
+    </div><!-- carousel结束 -->
+    <img src="img/m1.jpg" class="middle-pic1">
+    <img src="img/m2.jpg" class="middle-pic2">
+    </div><!-- middle结束 -->
+    <div class="right">
+       <div class="right-top">
+           <a href="#"><img src="img/headPic.jpg"></a>
+           <div class="right-top-right">
+                <p>Hi, 欢迎来到京东!</p>
+                <p><a href="#">注册</a>&nbsp;&nbsp;     <a href="#">登录</a></p>
+           </div><!-- right-top-right结束 -->
+           <input type="button" value="新人福利" class="button1">
+           <input type="button" value="PLUS会员" class="button2">
+       </div><!-- right-top结束 -->
+       <div class="right-middle">
+           <div class="right-middle-title">
+               <div class="title1"><a href="#" @mouseover="showTitle1()" >促销</a></div>
+               <div class="title2"><a href="#" @mouseover="showTitle2()">公告</a></div>
+               <div class="title3"><a href="#">更多</a></div>
+           </div><!-- right-middle-title结束 -->
+           <div class="title1-text" v-show="title1">
+              <ul>
+                 <li><a>轻薄本999元疯抢</a></li>
+                 <li><a>鲜花礼品满199减100</a></li>
+                 <li><a>每日享折扣 京东品质游</a></li>
+                 <li><a>奶粉2段 首购5折</a></li>
+              </ul>
+           </div><!-- title1-text结束 -->
+           <div class="title2-text" v-show="title2">
+              <ul>
+                 <li><a src="#">华南部分地区受国庆假期出...</a></li>
+                 <li><a>京东大件物流“送装一体...</a></li>
+                 <li><a>京东扶贫频道正式上线运营</a></li>
+                 <li><a>京东全球售升级 新域名同步...</a></li>
+              </ul>
+           </div><!-- title1-text结束 -->
+       </div><!-- right-middle结束 -->
+       <div class="right-bottom">
+          <img src="img/rightB.jpg">
+       </div><!-- right-bottom结束 -->
+    </div><!-- right结束 -->
+</div><!-- main结束 -->
+
+
+
+<div class="bottom">
+  <div class="bottom-head">
+  <h2>京东秒杀</h2>
+  <a href="#">总有你想不到的低价 ></a>
+
+  </div><!-- bottom-head结束 -->
+  <div class="bottom-main">
+     <ul>
+        <li>
+            
+                 <img src="img/ad1.jpg">
+                 
+                 <a href="#">Apple MacBook Air 13.3英寸笔记本电脑 银色(2017新款Cor</a>
+                 <p>¥7488.00</p>
+                 
+            
+        </li>
+
+        <li>
+            
+                 <img src="img/ad2.jpg">
+                 
+                 <a href="#">华硕(ASUS) 飞行堡垒三代FX60VM GTX1060 15.6英寸笔</a>
+                 <p>¥6999.00</p>
+                 
+            
+        </li>
+
+        <li>
+            
+                 <img src="img/ad3.jpg">
+                 
+                 <a href="#">努比亚(nubia)【6+128GB】Z11 咖啡金 移动联通电信4G手机 </a>
+                 <p>¥2299.00</p>
+                 
+            
+        </li>
+
+        <li>
+            
+                 <img src="img/ad4.jpg">
+                 
+                 <a href="#">三只松鼠 坚果炒货 零食奶油味 夏威夷果265g/袋</a>
+                 <p>¥23.90</p>
+                 
+            
+        </li>
+
+        <li>
+            
+                 <img src="img/ad5.jpg">
+                 
+                 <a href="#">Apple iPad mini 4 平板电脑 7.9英寸（128G WLAN版/A8芯</a>
+                 <p>¥3088.00</p>
+                 
+            
+        </li>
+     </ul>
+  </div><!-- bottom-main结束 -->
+  <div class="bottom-right" @mouseover="stopBr()" @mouseout="playBR()">
+     <ul>
+         <li v-for="(br,index) of brs" :key='index' v-show='index===brMark'>
+            <a href="#"></a><img :src="br"></a>
+         </li>
+       </ul>
+     <div class="BR-bullet">
+            <span v-for="(item,index) in brs.length"  :class="{'BR-active':index===brMark}" @mouseover='changeBR(index)'></span>
+       </div><!-- BR-bullet结束 --> 
+  </div><!-- bottom-right结束 -->
+</div><!-- bottom结束 -->
+
+
+
+    
+</div><!-- all结束 -->
+</body>
+</html>
